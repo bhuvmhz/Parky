@@ -1,4 +1,5 @@
 ﻿using ParkyAPI.Data;
+using ParkyAPI.Extensions;
 using ParkyAPI.Models;
 using ParkyAPI.Repository.IRepository;
 using System;
@@ -41,7 +42,7 @@ namespace ParkyAPI.Repository
 
         public bool NationalParkExists(string name)
         {
-            bool value = _db.NationalParks.Any(x => x.Name.ToLower().Trim() == name.ToLower().Trim());
+            bool value = _db.NationalParks.Any(x => x.Name.TrimAndLower() == name.TrimAndLower());
             return value;
         }
 
