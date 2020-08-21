@@ -52,14 +52,14 @@
             <param name="trailId">The Id of the trail</param>
             <returns></returns>
         </member>
-        <member name="M:ParkyAPI.Controllers.TrailsController.CreateTrail(ParkyAPI.Models.Dtos.TrailDto)">
+        <member name="M:ParkyAPI.Controllers.TrailsController.CreateTrail(ParkyAPI.Models.Dtos.TrailCreateDto)">
             <summary>
             Create new trail
             </summary>
             <param name="trailDto">New trail object</param>
             <returns></returns>
         </member>
-        <member name="M:ParkyAPI.Controllers.TrailsController.UpdateTrail(System.Int32,ParkyAPI.Models.Dtos.TrailDto)">
+        <member name="M:ParkyAPI.Controllers.TrailsController.UpdateTrail(System.Int32,ParkyAPI.Models.Dtos.TrailUpdateDto)">
             <summary>
             Update existing trail based upon Id
             </summary>
