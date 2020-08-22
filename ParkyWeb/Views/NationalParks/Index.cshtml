@@ -1,0 +1,25 @@
+﻿@model IEnumerable<NationalPark>
+
+@{
+    ViewData["Title"] = "National Parks";
+}
+<h1>@ViewData["Title"]</h1>
+<p>The list of national parks available</p>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>State</th>
+        <th>Created Date</th>
+    </tr>
+    @foreach (var nationalPark in Model)
+    {
+        <tr>
+            <td>@nationalPark.Id</td>
+            <td>@nationalPark.Name</td>
+            <td>@nationalPark.State</td>
+            <td>@nationalPark.Created</td>
+        </tr>
+    }
+</table>
