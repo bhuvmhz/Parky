@@ -14,7 +14,7 @@ namespace ParkyWeb.Repository
 
         public NationalParkRepository(IHttpClientFactory clientFactory): base(clientFactory)
         {
-            clientFactory = _clientFactory;
+            _clientFactory = clientFactory;
         }
     }
 }
