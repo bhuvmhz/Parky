@@ -35,5 +35,25 @@ namespace ParkyAPI.Controllers
 
             return Ok(user);
         }
+
+        [AllowAnonymous]
+        [HttpPost("register")]
+        public IActionResult Register([FromBody] User model)
+        {
+            bool ifUserNameUnique = _userRepo.IsUniqueUser(model.Username);
+            if (!ifUserNameUnique)
+            {
+                return BadRequest(new { message = "User name exists" });
+            }
+
+            var user = _userRepo.Register(model.Username, model.Password);
+            if (user == null)
+            {
+                return BadRequest(new { message = "Error while registering" });
+            }
+
+            user.Password = "**********";
+            return Ok(user);
+        }
     }
 }
