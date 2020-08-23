@@ -43,6 +43,7 @@ namespace ParkyAPI.Repository
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                     new Claim(ClaimTypes.Name, user.Id.ToString()),
+                    new Claim(ClaimTypes.Role, user.Role)
 
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
@@ -72,7 +73,8 @@ namespace ParkyAPI.Repository
             User user = new User()
             {
                 Username = userName,
-                Password = password
+                Password = password,
+                Role = "Admin"
             };
 
             _db.Users.Add(user);
