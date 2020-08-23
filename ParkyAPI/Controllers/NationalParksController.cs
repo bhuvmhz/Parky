@@ -133,7 +133,7 @@ namespace ParkyAPI.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public IActionResult DeleteNationalPark(int nationalParkId)
         {
             if (!_npRepo.NationalParkExists(nationalParkId))
