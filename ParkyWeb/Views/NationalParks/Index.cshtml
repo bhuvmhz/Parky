@@ -7,7 +7,7 @@
 <p>The list of national parks available</p>
 
 <div class="card-deck">
-    @foreach (var nationalPark in Model)
+    @foreach (var nationalPark in Model.Take(5))
     {
         string imgSrc = string.Empty;
         if (nationalPark.Picture != null)

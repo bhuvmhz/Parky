@@ -71,6 +71,7 @@ namespace ParkyWeb.Controllers
 
                 if (nationalPark.Id == 0)
                 {
+                    nationalPark.Created = DateTime.UtcNow;
                     await _npRepo.CreateAsync(SD.NationalParkAPIPath, nationalPark);
                     return RedirectToAction(nameof(Index));
                 }
