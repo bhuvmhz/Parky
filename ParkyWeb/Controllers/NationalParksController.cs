@@ -83,5 +83,16 @@ namespace ParkyWeb.Controllers
 
             return View(nationalPark);
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var deleteSuccess = await _npRepo.DeleteAsync(SD.NationalParkAPIPath, id);
+            if (deleteSuccess)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            return View("Upsert");
+        }
     }
 }

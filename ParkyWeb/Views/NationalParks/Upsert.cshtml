@@ -81,6 +81,7 @@
                         <button type="submit" class="btn btn-primary" asp-controller="NationalParks" asp-action="Upsert">
                             @(Model.Id != 0? "Update" : "Create")
                         </button>
+                        <button type="submit" class="btn btn-danger ml-3" asp-controller="NationalParks" asp-action="Delete" asp-route-id="@Model.Id">Delete</button>
                     </div>
                     <div class="col-3">
                     </div>
