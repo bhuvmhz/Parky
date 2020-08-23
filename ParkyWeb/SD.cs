@@ -12,5 +12,6 @@ namespace ParkyWeb
         public static string NationalParkAPIPath = APIBaseUrl + "api/nationalparks/";
         public static string TrailAPIPath = APIBaseUrl + "api/trails/";
         public static string ContainerAPIPath = APIBaseUrl + "api/containers/";
+        public static string AccountAPIPath = APIBaseUrl + "api/users/";
     }
 }
