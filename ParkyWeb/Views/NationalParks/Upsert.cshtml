@@ -88,9 +88,9 @@
             </div>
             <div class="col-4" style="width:150px;">
                 @if (Model.Picture != null)
-                        {
-                            var base64 = Convert.ToBase64String(Model.Picture);
-                            var imgSrc = string.Format("data:image/jpg;base64, {0}", base64);
+                {
+                    var base64 = Convert.ToBase64String(Model.Picture);
+                    var imgSrc = string.Format("data:image/jpg;base64,{0}", base64);
                     <img class="img-thumbnail" src="@imgSrc" />
                 }
             </div>

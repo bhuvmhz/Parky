@@ -110,12 +110,6 @@ namespace ParkyAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (_npRepo.NationalParkExists(nationalParkDto.Name))
-            {
-                ModelState.AddModelError("", "National Park Exists!");
-                return StatusCode(404, ModelState);
-            }
-
             var np = _mapper.Map<NationalPark>(nationalParkDto);
             if (!_npRepo.UpdateNationalPark(np))
             {

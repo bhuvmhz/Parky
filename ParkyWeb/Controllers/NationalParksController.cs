@@ -51,14 +51,16 @@ namespace ParkyWeb.Controllers
             if (ModelState.IsValid)
             {
                 var files = HttpContext.Request.Form.Files;
-                byte[] p1 = null;
-
+                
                 if (files.Count > 0)
                 {
-                    using var fs1 = files[0].OpenReadStream();
-                    using var ms1 = new MemoryStream();
-                    fs1.CopyTo(ms1);
-                    p1 = ms1.ToArray();
+                    byte[] p1 = null;
+                    using (var fs1 = files[0].OpenReadStream())
+                    {
+                        using var ms1 = new MemoryStream();
+                        fs1.CopyTo(ms1);
+                        p1 = ms1.ToArray();
+                    }
                     nationalPark.Picture = p1;
                 }
                 else
