@@ -6,20 +6,33 @@
 <h1>@ViewData["Title"]</h1>
 <p>The list of national parks available</p>
 
-<table class="table">
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>State</th>
-        <th>Created Date</th>
-    </tr>
-    @foreach (var nationalPark in Model)
-    {
+<div class="card">
+    <table class="table">
         <tr>
-            <td>@nationalPark.Id</td>
-            <td>@nationalPark.Name</td>
-            <td>@nationalPark.State</td>
-            <td>@nationalPark.Created</td>
+            <td colspan="5">
+                <a class="btn btn-success" asp-area="" asp-controller="NationalParks" asp-action="Upsert">Create</a>
+            </td>
         </tr>
-    }
-</table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>State</th>
+            <th>Created Date</th>
+            <th>Established Date</th>
+            <th></th>
+        </tr>
+        @foreach (var nationalPark in Model)
+        {
+            <tr>
+                <td>@nationalPark.Id</td>
+                <td>@nationalPark.Name</td>
+                <td>@nationalPark.State</td>
+                <td>@nationalPark.Created.ToShortDateString()</td>
+                <td>@nationalPark.Established.ToShortDateString()</td>
+                <td>
+                    <a class="btn btn-sm btn-primary" asp-area="" asp-controller="NationalParks" asp-action="Upsert" asp-route-id="@nationalPark.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

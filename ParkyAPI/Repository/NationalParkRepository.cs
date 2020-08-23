@@ -42,7 +42,7 @@ namespace ParkyAPI.Repository
 
         public bool NationalParkExists(string name)
         {
-            bool value = _db.NationalParks.Any(x => x.Name.TrimAndLower() == name.TrimAndLower());
+            bool value = _db.NationalParks.Any(x => x.Name.Trim().ToLower() == name.Trim().ToLower());
             return value;
         }
 
