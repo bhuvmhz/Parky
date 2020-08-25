@@ -1,11 +1,35 @@
 ﻿@{
     ViewData["Title"] = "Home";
 }
-<div class="card">
+
+<div class="row mb-3">
     <div class="col-md-12 pt-3 pb-3">
         <h1 class="text-sm-left">Welcome to Parky</h1>
-        <div class="mt-3">
-            <img class="w-100" src="@Url.Content("~/images/everest.jpg")"/>
-        </div>
     </div>
+</div>
+
+<div class="card-deck mb-3">
+    <div class="card p-3 text-center">
+        <h3 class="text-sm-center">Total</h3>
+        <p class="display-4 text-warning font-weight-bold">8</p>
+    </div>
+
+    <div class="card p-3 text-center">
+        <h3 class="text-sm-center">Active</h3>
+        <p class="display-4 text-success font-weight-bold">5</p>
+    </div>
+
+    <div class="card p-3 text-center">
+        <h3 class="text-sm-center">Public Access</h3>
+        <p class="display-4 text-secondary font-weight-bold">7</p>
+    </div>
+
+    <div class="card p-3 text-center">
+        <h3 class="text-sm-center">Wild Life</h3>
+        <p class="display-4 text-danger font-weight-bold">4</p>
+    </div>
+</div>
+
+<div class="card p-3">
+    <h3>Total National Parks</h3>
 </div>
