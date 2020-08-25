@@ -28,7 +28,6 @@ namespace ParkyWeb.Controllers
             return View(obj);
         }
 
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Upsert(int? id)
         {
             NationalPark obj = new NationalPark();
