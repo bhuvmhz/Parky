@@ -80,7 +80,7 @@ namespace ParkyWeb.Controllers
         {
             await HttpContext.SignOutAsync();
             HttpContext.Session.SetString("JWToken", "");
-            return RedirectToAction("Index");
+            return RedirectToAction("Login");
         }
 
         public IActionResult AccessDenied()

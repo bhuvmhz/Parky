@@ -16,7 +16,7 @@
             imgSrc = string.Format("data:image/jpg;base64,{0}", base64);
         }
         <div class="card">
-            <img class="card-img-top w-100" src="@imgSrc" alt="@nationalPark.Name" style="height: 100px">
+            <img class="card-img-top w-100" src="@imgSrc" alt="@nationalPark.Name" style="height: 50%">
             <div class="card-body">
                 <p>@nationalPark.Name</p>
                 <a class="btn btn-sm btn-primary w-100" asp-area="" asp-controller="NationalParks" asp-action="Upsert" asp-route-id="@nationalPark.Id">Edit</a>
