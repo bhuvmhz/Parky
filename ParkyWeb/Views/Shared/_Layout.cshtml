@@ -56,11 +56,11 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container-fluid text-center">
-            &copy; 2020 - ParkyWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    @{
+        var isLoggedIn = httpAccessor.HttpContext.Session.GetString("JWToken") != null && httpAccessor.HttpContext.Session.GetString("JWToken").Length > 0;
+        @await Html.PartialAsync("~/Views/Shared/_Footer.cshtml", isLoggedIn);
+    }
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
